@@ -46,6 +46,7 @@ public class ToStringTest {
         String localeDisplayName = Locale.CANADA.getDisplayName();
         String expectedStr = "CompactNumberFormat [locale: \"" + localeDisplayName + "\", decimal pattern: \"#,##0.###\", compact patterns: \"[, , , {one:0' 'thousand other:0' 'thousand}, {one:00' 'thousand other:00' 'thousand}, {one:000' 'thousand other:000' 'thousand}, {one:0' 'million other:0' 'million}, {one:00' 'million other:00' 'million}, {one:000' 'million other:000' 'million}, {one:0' 'billion other:0' 'billion}, {one:00' 'billion other:00' 'billion}, {one:000' 'billion other:000' 'billion}, {one:0' 'trillion other:0' 'trillion}, {one:00' 'trillion other:00' 'trillion}, {one:000' 'trillion other:000' 'trillion}]\"]\n";
         var c = NumberFormat.getCompactNumberInstance(Locale.CANADA, NumberFormat.Style.LONG);
+        System.out.println("expectedValueTest c = " + c.toString() + "expectedStr = " + expectedStr);
         assertEquals(expectedStr, c.toString());
     }
 
@@ -55,6 +56,7 @@ public class ToStringTest {
         String localeDisplayName = Locale.CANADA.getDisplayName();
         String expectedStr = "CompactNumberFormat [locale: \"" + localeDisplayName + "\", decimal pattern: \"\", compact patterns: \"[]\"]\n";
         var c = new CompactNumberFormat("", new DecimalFormatSymbols(Locale.CANADA), new String[]{});
+        System.out.println("oddValueTest c = " + c.toString() + "expectedStr = " + expectedStr);
         assertEquals(expectedStr, c.toString());
     }
 }
